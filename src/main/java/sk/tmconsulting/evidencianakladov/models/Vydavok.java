@@ -1,6 +1,6 @@
 package sk.tmconsulting.evidencianakladov.models;
 import java.sql.Date;
-//TODO Prestavka do 20.35
+
 public class Vydavok {
     private String popis;
     private double cena;

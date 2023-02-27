@@ -1,4 +1,8 @@
 package sk.tmconsulting.evidencianakladov.models;
+import com.itextpdf.text.DocumentException;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -10,15 +14,15 @@ public interface IFunkcionalita {
 
     // Agregacne funkcie
     double spocitajVsetkyVydavky() throws SQLException; // scitanie nechame na MySQL
-    int zistiPocetVsetkychVydavkov();
+    int zistiPocetVsetkychVydavkov() throws SQLException;
 
     void vypisMenu();
-    void exportPDF(); // exportuje vsetky zaznamy s detailami a celkovym sumarom
+    void exportMySQL2PDF() throws SQLException, DocumentException, IOException; // exportuje vsetky zaznamy s detailami a celkovym sumarom
 
     // MySQL CRUD
-    void ulozMySQL(Vydavok vydavok); // ulozi Vydavok do DB a nevrati nic
-    ArrayList<Vydavok> vyberVsetkyMySQL(); // vyberie vsetky zaznamy z databazy a vrati ArrayList
+    void ulozMySQL(Vydavok vydavok) throws SQLException; // ulozi Vydavok do DB a nevrati nic
+    ArrayList<Vydavok> vyberVsetkyMySQL() throws SQLException; // vyberie vsetky zaznamy z databazy a vrati ArrayList
     // Ako bude reagovat aplikacia, ked zvolime menu polozku Uprav zaznam. Aplikacia sa nasledne opyta na ID zaznamu, cize bude pracovat s nim
-    void aktualizujMySQL(int id, Vydavok vydavok);
-    void odstranMySQL(int id);
+    void aktualizujMySQL(int id, Vydavok vydavok) throws SQLException;
+    void odstranMySQL(int id) throws SQLException;
 }
