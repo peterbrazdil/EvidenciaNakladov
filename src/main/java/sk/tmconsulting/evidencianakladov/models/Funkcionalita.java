@@ -20,7 +20,7 @@ public class Funkcionalita implements IFunkcionalita {
     public Funkcionalita() throws SQLException {
         String url = "jdbc:mysql://localhost:3306/evidencianakladov_db"; // zmeňte URL a názov databázy podľa potreby
         String username = "root"; // zmeňte používateľské meno podľa potreby
-        String password = "password"; // zmeňte heslo podľa potreby
+        String password = "Kolotoc1*"; // zmeňte heslo podľa potreby
         conn = DriverManager.getConnection(url, username, password);
         System.out.println("Spojenie s databázou je v poriadku!");
     }

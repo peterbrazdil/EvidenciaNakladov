@@ -19,26 +19,27 @@ public class Main {
         //int pocet = funkcionalita.zistiPocetVsetkychVydavkov();
         //System.out.println("Počet výdavkov je: " + pocet);
         //funkcionalita.vypisMenu(); // OK
-        funkcionalita.exportMySQL2PDF();
+        //funkcionalita.exportMySQL2PDF();
 
         // START Ulozenie vydavku
-/*        Vydavok vydavokObjekt = new Vydavok();
-        vydavokObjekt.setPopis("Sukňa");
-        vydavokObjekt.setCena(20.90);
-        vydavokObjekt.setKategoria("Oblečenie");
+        Vydavok vydavokObjekt = new Vydavok();
+        vydavokObjekt.setPopis("diesel");
+        vydavokObjekt.setCena(19.20);
+        vydavokObjekt.setKategoria("PHM");
         Calendar currenttime = Calendar.getInstance();
-        Date dnesnyDatum = new Date((currenttime.getTime()).getTime()); // aktualny dnesny Datum
-        vydavokObjekt.setDatum(dnesnyDatum);
-        vydavokObjekt.setDatum(new Date(2023,2,26)); // vytvorenie vlastneho datumu, to je vsak zastaraly sposob (deprecated), neodporuca sa!
-        funkcionalita.ulozMySQL(vydavokObjekt);*/
+       // Date dnesnyDatum = new Date((currenttime.getTime()).getTime()); // aktualny dnesny Datum
+       // vydavokObjekt.setDatum(dnesnyDatum);
+       // vydavokObjekt.setDatum(new Date(2023,2,26)); // vytvorenie vlastneho datumu, to je vsak zastaraly sposob (deprecated), neodporuca sa!
+        vydavokObjekt.setDatum(Date.valueOf(LocalDate.of( 2023 , 2 , 28 )));
+        funkcionalita.ulozMySQL(vydavokObjekt);
         // END Ulozenie vydavku
 
-        Vydavok vydavokObjekt = new Vydavok();
+       /* Vydavok vydavokObjekt = new Vydavok();
         vydavokObjekt.setPopis("Kofola");
         vydavokObjekt.setCena(1.49);
         vydavokObjekt.setKategoria("Potraviny - nápoje");
         vydavokObjekt.setDatum(Date.valueOf(LocalDate.of( 2023 , 2 , 28 )));
-        funkcionalita.aktualizujMySQL(2, vydavokObjekt);
+        funkcionalita.aktualizujMySQL(2, vydavokObjekt);*/
         //funkcionalita.odstranMySQL(1);
 
     }
